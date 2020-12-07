@@ -1,25 +1,26 @@
 const list = document.querySelector('.list');
 const items = document.querySelector('.items');
 const item = document.querySelectorAll('.item');
-const checkboxes =  document.querySelectorAll('input[type=checkbox]');
+const checkboxes =  document.querySelectorAll('.item input[type=checkbox]');
 const input = document.querySelector('.add-item input');
 const button = document.querySelector('.button');
 
 function addItem() {
     let myVal = input.value;
     let newItem = document.createElement('li');
-    newItem.innerHTML = `
-        <input type="checkbox">${myVal}
-    `;
     newItem.classList.add('item');
-    items.appendChild(newItem);
+ 
+
+
+    
     input.value = "";
+    newItem.addEventListener('click', removeItem);
 }
 
-function removeItem (e) {
-    if (e.target.checked === true) {
-        e.target.parentNode.remove(e.target);
-    };
+  function removeItem(){
+    var item = this.parentNode;
+    var parent = item.parentNode;
+    parent.removeChild(item);
   }
 
 button.addEventListener('click', addItem);
