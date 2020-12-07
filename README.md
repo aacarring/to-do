@@ -1,0 +1,1 @@
+Here is a sweet and simple little to-do list app made with HTML, CSS, and JS, with functionality to add and remove items.
