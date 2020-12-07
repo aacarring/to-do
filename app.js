@@ -9,12 +9,15 @@ function addItem() {
     let myVal = input.value;
     let newItem = document.createElement('li');
     newItem.classList.add('item');
- 
-
-
-    
+    let inputVal = document.createElement('input');
+    inputVal.setAttribute('type', 'checkbox');
+    let para = document.createElement('p');
+    para.textContent = myVal;
+    newItem.appendChild(inputVal);
+    newItem.appendChild(para);
+    items.appendChild(newItem);
     input.value = "";
-    newItem.addEventListener('click', removeItem);
+    inputVal.addEventListener('click', removeItem);
 }
 
   function removeItem(){
